@@ -1,0 +1,7 @@
+@import "tailwindcss";
+
+input {
+  width: 100%;
+  outline: none;
+  border: none;
+}

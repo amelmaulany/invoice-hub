@@ -9,7 +9,7 @@ import ProfileSection from './profile-section';
 const Topbar = () => {
   const [isLight, setIsLight] = useState<boolean>(true);
   return (
-    <div className="flex h-20 w-full items-center justify-end gap-7 border-b border-neutral-200 px-[30px] py-[17px] shadow-md">
+    <div className="flex h-20 w-full min-w-[1000px] items-center justify-end gap-7 border-b border-neutral-200 px-[30px] py-[17px] shadow-md">
       <ThemeToogle onChange={setIsLight} value={isLight} />
       <div className="flex items-center gap-[30px]">
         <div className="flex items-center gap-[15px]">

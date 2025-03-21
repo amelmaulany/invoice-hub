@@ -1,0 +1,54 @@
+{
+  "general": {
+    "error": "Something went wrong."
+  },
+  "sidebar": {
+    "invoicing": "Invoicing",
+    "salesInvoices": "Sales Invoices",
+    "salesOrders": "Sales Orders"
+  },
+  "notFound": {
+    "meta": "Page Not Found",
+    "title": "Not Found",
+    "homeBtn": "Back to home",
+    "description": "Page that you looking for is not found."
+  },
+  "invoices": {
+    "fields": {
+            "name":  "Name",
+            "invoice": "Invoice",
+            "number": "Number",
+            "dueDate": "Due date",
+            "amount": "Amount",
+            "status": "Status"
+    },
+    "form": {
+        "title": "Add Invoice",
+        "successMsg": "The invoice was successfully added.",
+        "validations": {
+            "name": {
+                "required": "Name is required"
+            },
+            "number": {
+                "required": "Number is required"
+            },
+            "dueDate": {
+                "required": "Due date is required",
+                "min": "The minimum due date is today"
+            },
+            "amount": {
+                "required": "Amount is required",
+                "min": "The minimum value of amount is 1",
+                "max": "The maximum value of amount is 9999999999"
+            },
+            "status": {
+                "required": "Status is required"
+            }
+        }
+    },
+    "list": {
+        "title": "Sales Invoices",
+        "meta": "Sales Invoices"
+    }
+  }
+}

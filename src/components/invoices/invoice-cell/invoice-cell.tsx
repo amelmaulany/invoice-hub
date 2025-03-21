@@ -5,7 +5,7 @@ export const Content = ({ name, number }: { name: string; number: string }) => {
     <td className={cellStyle}>
       <div className="flex flex-col gap-1">
         <span className={cellTextStyle}>{name}</span>
-        <span className="line-clamp-1 text-sm font-semibold text-ellipsis text-neutral-600">
+        <span className="line-clamp-1 text-sm font-semibold text-ellipsis text-neutral-400">
           {number}
         </span>
       </div>

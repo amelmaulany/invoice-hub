@@ -11,7 +11,7 @@ export const Root = ({ children }: { children: ReactNode }) => {
 };
 
 export const Head = ({ children }: { children: ReactNode }) => {
-  return <thead className="bg-slate-100">{children}</thead>;
+  return <thead className="bg-slate-200">{children}</thead>;
 };
 
 export const Th = ({
@@ -37,7 +37,7 @@ export const Th = ({
   };
   return (
     <th
-      className={`px-[30px] py-[15px] text-left text-base font-semibold text-neutral-800 ${getTextAlign(colAlign)}`}
+      className={`px-[30px] py-[15px] text-left text-base uppercase font-medium text-neutral-800 ${getTextAlign(colAlign)}`}
     >
       {children}
     </th>
@@ -45,9 +45,9 @@ export const Th = ({
 };
 
 export const Body = ({ children }: { children: ReactNode }) => {
-  return <tbody>{children}</tbody>;
+  return <tbody className="bg-white">{children}</tbody>;
 };
 
 export const Tr = ({ children }: { children: ReactNode }) => {
-  return <tr className="border-b border-b-slate-200">{children}</tr>;
+  return <tr className="border-b border-b-slate-200 last:border-b-transparent">{children}</tr>;
 };

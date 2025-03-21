@@ -32,11 +32,11 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
         <SnackbarProvider>
-          <div className="flex h-screen w-screen">
+          <div className="flex h-screen w-screen min-w-[1280px]">
             <Sidebar />
             <div className="flex w-[calc(100vw-280px)] flex-col">
               <Topbar />
-              <div className="min-h-[calc(100vh-80px)] w-[calc(100vw-280px)] overflow-y-auto bg-slate-100">
+              <div className="min-h-[calc(100vh-80px)] w-[calc(100vw-280px)] min-w-[1000px] overflow-y-auto bg-slate-50">
                 {children}
               </div>
             </div>

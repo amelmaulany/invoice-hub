@@ -6,6 +6,8 @@ import * as Table from '@/components/shared/table/table';
 import PageNumber from '../page-number/page-number';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMagnifyingGlass } from '@fortawesome/pro-regular-svg-icons';
+import SearchInput from '../search-input/search-input';
+import PageSize from '../page-size/page-size';
 
 export type DataViewColumn<T> = {
   key: keyof T;
@@ -75,21 +77,15 @@ const DataView = <T,>({
   };
 
   return (
-    <div className="flex flex-col gap-4 p-[30px]">
-      <div className="flex justify-end">
-        <div className="flex w-fit min-w-9 items-center gap-3 rounded-md border border-neutral-200 px-3 py-1">
-          <FontAwesomeIcon icon={faMagnifyingGlass} fixedWidth fontSize={14} />
-          <input
-            type="text"
-            placeholder="Search..."
-            value={searchQuery}
-            onChange={(e) => {
-              setSearchQuery(e.target.value);
-              setPage(1);
-              updateUrlParams({ search: e.target.value, page: '1' });
-            }}
-          />
-        </div>
+    <div className="flex flex-col gap-4">
+      <div className="flex justify-start">
+        <SearchInput onChange={e => {
+          setSearchQuery(e);
+          setPage(1);
+          updateUrlParams({ search: e, page: '1' });
+        }}
+        value={searchQuery}
+        />
       </div>
 
       <Table.Root>
@@ -122,24 +118,11 @@ const DataView = <T,>({
       </Table.Root>
 
       <div className="flex w-full items-center justify-between gap-3">
-        <div className="flex items-center gap-2">
-          View
-          <select
-            onChange={(e) => {
-              setPageSizeState(Number(e.target.value));
-              setPage(1);
-              updateUrlParams({ pageSize: e.target.value, page: '1' });
-            }}
-            className="w-fit"
-            value={pageSizeState}
-          >
-            <option value={5}>5</option>
-            <option value={10}>10</option>
-            <option value={20}>20</option>
-          </select>
-          of {totalPages}
-        </div>
-
+        <PageSize onChange={e => {
+          setPageSizeState(e);
+          setPage(1);
+          updateUrlParams({ pageSize: e.toString(), page: '1' });
+        }} totalPages={totalPages} value={pageSizeState}/>
         <PageNumber count={totalPages} onChange={setPage} pageNumber={page} pageSize={pageSize} />
       </div>
     </div>

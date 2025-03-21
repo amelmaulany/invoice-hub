@@ -8,11 +8,11 @@ export default {
   ],
   theme: {
     extend: {
-      heigth: {
-        content: 'h-[calc(100vh-80px)]',
+      height: {
+        content: 'calc(100vh - 80px)',
       },
       width: {
-        content: 'w-[calc(100vw-280px)]',
+        content: 'calc(100vw - 280px)',
       },
       colors: {
         background: 'var(--background)',

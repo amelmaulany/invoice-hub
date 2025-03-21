@@ -1,15 +1,17 @@
 import { SearchParams } from '@/lib/types/search-params';
 import ContentContainer from '@/components/shared/content-container/content-container';
 import InvoicesDataView from './data-view';
+import en from '@/locales/en.json'
+
+const labels = en.invoices.list
 
 export const metadata = {
-  title: 'My Invoices',
-  description: 'My Invoices',
+  title: labels.meta,
 };
 
 const MyInvoices = async ({ searchParams }: { searchParams: SearchParams }) => {
   return (
-    <ContentContainer title="My Invoices">
+    <ContentContainer title={labels.title}>
       <InvoicesDataView searchParams={searchParams} />
     </ContentContainer>
   );
